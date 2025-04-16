@@ -1,7 +1,8 @@
 package com.example.api.application.service;
 
+import com.example.api.application.usecase.FooUseCases;
 import com.example.api.domain.Foo;
-import com.example.api.adapters.outbound.repository.FooRepository;
+import com.example.api.domain.FooRepository;
 import com.example.api.util.Converter;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import java.util.function.BiConsumer;
 
 @Service
 @AllArgsConstructor
-public class FooService {
+public class FooServiceImpl implements FooUseCases {
 
     private final FooRepository fooRepository;
 

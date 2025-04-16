@@ -5,7 +5,7 @@ import com.example.api.adapters.inbound.dto.response.FooResponse;
 import com.example.api.adapters.inbound.dto.update.FooPartialUpdate;
 import com.example.api.adapters.inbound.dto.update.FooUpdate;
 import com.example.api.domain.Foo;
-import com.example.api.application.service.FooService;
+import com.example.api.application.service.FooServiceImpl;
 import com.example.api.util.Converter;
 import com.example.api.util.Paths;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -23,30 +23,30 @@ import java.util.List;
 @Tag(name = "Foo")
 public class FooController {
 
-    private final FooService fooService;
+    private final FooServiceImpl fooServiceImpl;
 
     private final Converter converter;
 
     @GetMapping
     public ResponseEntity<List<FooResponse>> get() {
-        return ResponseEntity.ok(converter.mapAll(fooService.findAll(), FooResponse.class));
+        return ResponseEntity.ok(converter.mapAll(fooServiceImpl.findAll(), FooResponse.class));
     }
     
     @GetMapping("/{id}")
     public ResponseEntity<FooResponse> get(@PathVariable("id") Long id) {
-        return ResponseEntity.ok(converter.map(fooService.find(id), FooResponse.class));
+        return ResponseEntity.ok(converter.map(fooServiceImpl.find(id), FooResponse.class));
     }
 
     @PostMapping
     public ResponseEntity<FooResponse> post(@Valid @RequestBody FooPersist fooPersist) {
-        return ResponseEntity.ok(converter.map(fooService.save(converter.map(fooPersist, Foo.class)), FooResponse.class));
+        return ResponseEntity.ok(converter.map(fooServiceImpl.save(converter.map(fooPersist, Foo.class)), FooResponse.class));
     }
 
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<FooResponse> put(@PathVariable("id") Long id, @Valid @RequestBody FooUpdate fooUpdate) {
         Foo foo = converter.map(fooUpdate, Foo.class);
         foo.setId(id);
-        return  ResponseEntity.ok(converter.map(fooService.update(foo), FooResponse.class));
+        return  ResponseEntity.ok(converter.map(fooServiceImpl.update(foo), FooResponse.class));
     }
 
 
@@ -54,12 +54,12 @@ public class FooController {
     public ResponseEntity<FooResponse> patch(@PathVariable("id") Long id, @Valid @RequestBody FooPartialUpdate fooPartialUpdate) {
         Foo foo = converter.map(fooPartialUpdate, Foo.class);
         foo.setId(id);
-        return  ResponseEntity.ok(converter.map(fooService.partialUpdate(foo), FooResponse.class));
+        return  ResponseEntity.ok(converter.map(fooServiceImpl.partialUpdate(foo), FooResponse.class));
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
-        fooService.delete(id);
+        fooServiceImpl.delete(id);
         return ResponseEntity.noContent().build();
     }
 
