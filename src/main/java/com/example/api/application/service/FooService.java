@@ -1,7 +1,7 @@
 package com.example.api.service;
 
 import com.example.api.entity.Foo;
-import com.example.api.repository.FooRepository;
+import com.example.api.adapters.outbound.repository.FooRepository;
 import com.example.api.util.Converter;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
