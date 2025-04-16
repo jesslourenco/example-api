@@ -1,4 +1,4 @@
-package com.example.api.dto.response;
+package com.example.api.adapters.inbound.dto.response;
 
 import lombok.Data;
 

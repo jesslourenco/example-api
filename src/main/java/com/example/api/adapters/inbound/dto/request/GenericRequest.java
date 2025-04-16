@@ -1,4 +1,4 @@
-package com.example.api.dto.request;
+package com.example.api.adapters.inbound.dto.request;
 
 import lombok.Data;
 import org.springframework.data.domain.PageRequest;

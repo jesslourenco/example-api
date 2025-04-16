@@ -1,4 +1,4 @@
-package com.example.api.dto.request;
+package com.example.api.adapters.inbound.dto.request;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

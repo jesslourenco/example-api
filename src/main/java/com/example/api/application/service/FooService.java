@@ -1,6 +1,6 @@
-package com.example.api.service;
+package com.example.api.application.service;
 
-import com.example.api.entity.Foo;
+import com.example.api.domain.Foo;
 import com.example.api.adapters.outbound.repository.FooRepository;
 import com.example.api.util.Converter;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.api.dto.update;
+package com.example.api.adapters.inbound.dto.update;
 
 import lombok.Data;
 

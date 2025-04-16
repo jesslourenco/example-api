@@ -1,11 +1,11 @@
-package com.example.api.controller;
+package com.example.api.adapters.inbound.controller;
 
-import com.example.api.dto.persist.FooPersist;
-import com.example.api.dto.response.FooResponse;
-import com.example.api.dto.update.FooPartialUpdate;
-import com.example.api.dto.update.FooUpdate;
-import com.example.api.entity.Foo;
-import com.example.api.service.FooService;
+import com.example.api.adapters.outbound.dto.persist.FooPersist;
+import com.example.api.adapters.inbound.dto.response.FooResponse;
+import com.example.api.adapters.inbound.dto.update.FooPartialUpdate;
+import com.example.api.adapters.inbound.dto.update.FooUpdate;
+import com.example.api.domain.Foo;
+import com.example.api.application.service.FooService;
 import com.example.api.util.Converter;
 import com.example.api.util.Paths;
 import io.swagger.v3.oas.annotations.tags.Tag;

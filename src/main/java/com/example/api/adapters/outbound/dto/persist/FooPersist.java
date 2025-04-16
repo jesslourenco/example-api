@@ -1,4 +1,4 @@
-package com.example.api.dto.persist;
+package com.example.api.adapters.outbound.dto.persist;
 
 import lombok.Data;
 
