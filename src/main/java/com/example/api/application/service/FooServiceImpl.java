@@ -1,6 +1,6 @@
 package com.example.api.application.service;
 
-import com.example.api.application.usecase.FooUseCases;
+import com.example.api.application.port.inbound.FooUseCases;
 import com.example.api.domain.Foo;
 import com.example.api.domain.FooRepository;
 import com.example.api.util.Converter;

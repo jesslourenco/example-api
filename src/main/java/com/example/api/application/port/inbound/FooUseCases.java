@@ -1,4 +1,4 @@
-package com.example.api.application.usecase;
+package com.example.api.application.port.inbound;
 
 import com.example.api.domain.Foo;
 
